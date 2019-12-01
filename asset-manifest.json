@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/urbanbotany/static/css/main.97a416e7.chunk.css",
+    "main.js": "/urbanbotany/static/js/main.6e14cbd1.chunk.js",
+    "main.js.map": "/urbanbotany/static/js/main.6e14cbd1.chunk.js.map",
+    "runtime-main.js": "/urbanbotany/static/js/runtime-main.407065a9.js",
+    "runtime-main.js.map": "/urbanbotany/static/js/runtime-main.407065a9.js.map",
+    "static/js/2.5e156a9c.chunk.js": "/urbanbotany/static/js/2.5e156a9c.chunk.js",
+    "static/js/2.5e156a9c.chunk.js.map": "/urbanbotany/static/js/2.5e156a9c.chunk.js.map",
+    "index.html": "/urbanbotany/index.html",
+    "precache-manifest.449a234b4f2345bd76444bba8e071bf1.js": "/urbanbotany/precache-manifest.449a234b4f2345bd76444bba8e071bf1.js",
+    "service-worker.js": "/urbanbotany/service-worker.js",
+    "static/css/main.97a416e7.chunk.css.map": "/urbanbotany/static/css/main.97a416e7.chunk.css.map",
+    "static/media/app.scss": "/urbanbotany/static/media/homepageBackground.d93e4428.png",
+    "static/media/logo.png": "/urbanbotany/static/media/logo.61279179.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.407065a9.js",
+    "static/js/2.5e156a9c.chunk.js",
+    "static/css/main.97a416e7.chunk.css",
+    "static/js/main.6e14cbd1.chunk.js"
+  ]
+}
