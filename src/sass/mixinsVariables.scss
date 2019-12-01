@@ -1,0 +1,40 @@
+// colours
+$black: #262626;
+$white: #fff;
+$accent1: #92bda3;
+$accent2: #dd9936;
+$accent3: #cc571d;
+$accent4: #a1ba89;
+$accent5: #d8e2dc;
+
+// fonts
+
+@mixin serif {
+    font-family: starling, serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@mixin lightItalicSans {
+    font-family: interstate, sans-serif;
+    font-weight: 300;
+    font-style: italic;
+}
+
+@mixin lightSans {
+    font-family: interstate, sans-serif; 
+    font-weight: 400;   
+    font-style: normal;
+}
+
+@mixin sans {
+    font-family: interstate, sans-serif;
+    font-weight: 500;  
+    font-style: normal;
+}
+
+@mixin boldSans {
+    font-family: interstate, sans-serif;
+    font-weight: 700; 
+    font-style: normal;
+}

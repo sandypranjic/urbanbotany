@@ -1,0 +1,32 @@
+// Stripping styles
+
+html {
+    font-size: 62.5%;
+}
+
+body, div, section, img, h1, h2, h3, h4, p, span, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: $black;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: $black;
+}
+
+.mobileOnly {
+    display: none;
+}
+
+.wrapper {
+    width: 70%;
+    margin: 0 auto;
+}

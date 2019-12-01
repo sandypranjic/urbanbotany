@@ -1,0 +1,44 @@
+header {
+    height: 150px;
+    background-color: $white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    img {
+        max-width: 400px;
+        cursor: pointer;
+    }
+    nav {
+        @include lightSans;
+        font-size: 2rem;
+    }
+    ul {
+        display: flex;
+        flex-direction: row;
+        li {
+            margin: 0 20px;
+            position: relative;
+            z-index: 10;
+            &::after {
+                content: "";
+                position: absolute;
+                width: calc(100% - 4px);
+                height: 10px;
+                left: 2px;
+                background-color: $accent2;
+                opacity: 0.2;
+                display: none;
+                bottom: 0;
+                z-index: 1;
+            }
+            &:hover {
+                cursor: pointer;
+                &::after {
+                    display: block;
+                }
+            }
+        }
+    }
+}

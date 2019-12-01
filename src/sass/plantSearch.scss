@@ -1,0 +1,45 @@
+.plantSearchHeader {
+    width: 100%;
+    text-align: center;
+    h1 {
+        @include sans;
+        font-size: 4rem;
+        color: $accent3;
+        padding-bottom: 50px;
+    }
+    p {
+        @include lightSans;
+        font-size: 2rem;
+        color: $black;
+    }
+}
+.searchBar {
+    font-size: 3.2rem;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+    .plantSearchInput {
+        @include lightSans;
+        background-color: rgba(161, 186, 137, 0.5);
+        color: $white;
+        border-radius: 5px;
+        border: 0;
+        padding: 10px;
+        &::placeholder {
+            color: $white;
+            opacity: 1;
+        }
+    }
+    button {
+        color: $accent4;
+        background-color: transparent;
+        padding: 10px;
+        border: 0;
+        cursor: pointer;
+        &:hover {
+            color: $accent2;
+        }
+    }
+}

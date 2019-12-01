@@ -1,0 +1,105 @@
+.homepageContainer {
+    width: 100%;
+    height: calc(100vh - 150px);
+    background-image: url("../assets/homepageBackground.png");
+    background-size: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -50px;
+    h1 {
+        @include boldSans;
+        font-size: 6rem;
+        color: $accent2;
+        margin-bottom: 50px;
+    }
+    .homepageCopyText{
+        width: 50%;
+        p {
+            @include lightSans;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .searchForAPlant {
+            @include sans;
+            display: block;
+            margin: 0 auto;
+            background-color: rgba(204, 87, 29, 0.5);
+            font-size: 3rem;
+            color: $white;
+            border: 0;
+            border-radius: 5px;
+            padding: 10px;
+            &:hover, &:focus {
+                background-color: $accent3;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+h2 {
+    @include lightSans;
+    color: $black;
+    font-size: 3rem;
+    position: relative;
+    display: inline-block;
+    z-index: 10;
+    margin: 20px;
+    &::after {
+        content: "";
+        display: block;
+        height: 10px;
+        width: calc(100% - 10px);
+        position: absolute;
+        left: 5px;
+        bottom: 5px;
+        background-color: $accent5;
+        z-index: -1;
+        opacity: 0.5;
+    }
+}
+
+.displayAllPlantsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.plantImageContainer {
+    width: calc(100%);
+    height: 350px;
+    background-color: #e6e6e6;
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+.plantContainer {
+    width: calc((100% / 3) - 20px);
+    margin: 20px 10px;
+    padding: 10px;
+    border: 1px solid $accent5;
+}
+h3 {
+    @include lightSans;
+    color: $black;
+    text-align: center;
+    font-size: 2rem;
+    padding: 10px 0;
+}
+h4 {
+    @include lightItalicSans;
+    font-size: 1.7rem;
+    color: $black;
+    text-align: center;
+}
