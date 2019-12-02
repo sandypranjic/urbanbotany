@@ -3,13 +3,28 @@ import './sass/app.scss';
 import DisplayAllPlants from './DisplayAllPlants';
 import dbRef from "./firebase.js";
 import SearchForSpecificPlant from "./SearchForSpecificPlant.js";
+import InfoForSpecificPlant from "./InfoForSpecificPlant.js";
 
 class PlantSearch extends Component {
     constructor() {
         super();
         this.state = {
             showAllPlants: true,
+            showSearchForASpecificPlant: false,
             userInput: "",
+            showInfoForSpecificPlant: false,
+            specificPlantScientificName: "",
+            specificPlantCommonName: "",
+            specificPlantImage: "",
+            specificPlantFamily: "",
+            toleratesLowLight: null, 
+            toleratesMediumLight: null,
+            toleratesHighLight: null,
+            specificPlantWateringNeeds: "",
+            specificPlantHumidity: "",
+            specificPlantMaxGrowthInMetres: null,
+            canPropagateByCutting: null,
+            isToxic: null,
         };
     }
 
@@ -26,8 +41,59 @@ class PlantSearch extends Component {
             console.log(searchQuery);
             this.setState({
                 showAllPlants: false,
+                showSearchForASpecificPlant: true,
+                showInfoForSpecificPlant: false,
             })
         }
+    }
+
+    showThisPlant = (scientificName, commonName, image, family, lowLight, mediumLight, highLight, wateringNeeds, humidity, maxGrowthInMetres, propagateByCutting, toxic) => {
+        this.setState({
+            showInfoForSpecificPlant: true,
+            showAllPlants: false,
+            showSearchForASpecificPlant: false,
+            userInput: "",
+            specificPlantScientificName: scientificName,
+            specificPlantCommonName: commonName,
+            specificPlantImage: image,
+            specificPlantFamily: family,
+            toleratesLowLight: lowLight, 
+            toleratesMediumLight: mediumLight,
+            toleratesHighLight: highLight,
+            specificPlantWateringNeeds: wateringNeeds,
+            specificPlantHumidity: humidity,
+            specificPlantMaxGrowthInMetres: maxGrowthInMetres,
+            canPropagateByCutting: propagateByCutting,
+            isToxic: toxic,
+        })
+        console.log(scientificName, commonName, image, family);
+        let elmnt = document.querySelector(".searchBar");
+        this.scrollTo(document.documentElement, elmnt.offsetTop, 600);
+    }
+
+    goBackToAllPlants = () => {
+        this.setState({
+            showInfoForSpecificPlant: false,
+            showAllPlants: true,
+            showSearchForASpecificPlant: false,
+            userInput: "",
+            specificPlantScientificName: "",
+            specificPlantCommonName: "",
+            specificPlantImage: "",
+            specificPlantFamily: "",
+        })
+    }
+
+    scrollTo = (element, to, duration) => {
+        if (duration <= 0) return;
+        const difference = to - element.scrollTop;
+        const perTick = difference / duration * 10;
+    
+        setTimeout( () => {
+            element.scrollTop = element.scrollTop + perTick;
+            if (element.scrollTop === to) return;
+            this.scrollTo(element, to, duration - 10);
+        }, 10);
     }
 
     render() {
@@ -48,9 +114,13 @@ class PlantSearch extends Component {
 
                     <div className="searchResults">
 
-                        {this.state.showAllPlants ? <DisplayAllPlants plantsProp={this.props.plantsProp}></DisplayAllPlants> : <div className="displayAllPlantsContainer"><SearchForSpecificPlant searchQueryProp={this.state.userInput} plantsProp={this.props.plantsProp} /></div>}
-                    </div>
+                        {this.state.showAllPlants ? <div className="displayAllPlantsContainer"><div className="searchResultsHeader"><h2>Displaying All Plants</h2></div><DisplayAllPlants plantsProp={this.props.plantsProp} showThisPlantProp={this.showThisPlant} /></div> : null}
 
+                        {this.state.showSearchForASpecificPlant ? <div className="displayAllPlantsContainer"><div className="searchResultsHeader"><h2>Displaying search results for {this.state.userInput}</h2></div><SearchForSpecificPlant searchQueryProp={this.state.userInput} plantsProp={this.props.plantsProp} showThisPlantProp={this.showThisPlant} goBackToAllPlantsProp={this.goBackToAllPlants} /></div> : null}
+
+
+                        {this.state.showInfoForSpecificPlant ? <InfoForSpecificPlant specificPlantScientificNameProp={this.state.specificPlantScientificName} specificPlantCommonNameProp={this.state.specificPlantCommonName} specificPlantImageProp={this.state.specificPlantImage} specificPlantFamilyProp={this.state.specificPlantFamily} goBackToAllPlantsProp={this.goBackToAllPlants} lowLightProp={this.state.toleratesLowLight} mediumLightProp={this.state.toleratesMediumLight} highLightProp={this.state.toleratesHighLight} wateringNeedsProp={this.state.specificPlantWateringNeeds} humidityProp={this.state.specificPlantHumidity} maxGrowthProp={this.state.specificPlantMaxGrowthInMetres} propagationProp={this.state.canPropagateByCutting} toxicProp={this.state.isToxic} / > : null}
+                    </div>
 
                 </div>
             </React.Fragment>

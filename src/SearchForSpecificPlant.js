@@ -9,17 +9,6 @@ class SearchForSpecificPlant extends Component {
         }
     }
 
-    // noSearchQueryMatch = () => {
-    //     if (plantsWithMatch === 0) {
-    //         document.getElementsByClassName("displayAllPlantsContainer").innerHtml = "";
-    //         return(
-    //             <div className="plantContainer" key="index">
-    //                 <h3>We don't have any info on the plant you searched. Please try again.</h3>
-    //             </div>
-    //         )
-    //     }
-    // }
-
     render() {
         let counter = 0;
                 return(
@@ -36,7 +25,7 @@ class SearchForSpecificPlant extends Component {
                                 counter = counter + 1;
                                 console.log(counter);
                                 return(
-                                    <div key={index} className="plantContainer">
+                                    <div key={index} className="plantContainer" onClick={ () => this.props.showThisPlantProp(plant.scientificName, plant.commonName, plant.image, plant.family, plant.lowLight, plant.mediumLight, plant.highLight, plant.wateringNeeds, plant.humidity, plant.maxGrowthInMetres, plant.propagateByCutting, plant.toxic)}>
                                         <div className="plantImageContainer">
                                             <img src={plant.image} alt="" />
                                         </div>
@@ -49,6 +38,9 @@ class SearchForSpecificPlant extends Component {
                                 return(
                                     <h3>Our database does not have any info on the plant you searched. Please try again. You might get more accurate results if you search using the plant's scientific name.</h3>
                                 )
+                            }
+                            if (counter >= lengthOfArray) {
+                                this.props.goBackToAllPlantsProp();
                             }
                         })
                     }

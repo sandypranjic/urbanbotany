@@ -10,14 +10,11 @@ class DisplayAllPlants extends Component {
 
         return(
             <React.Fragment>
-                <h2>Displaying All Plants</h2>
-
-                <div className="displayAllPlantsContainer">
 
                     {
                         this.props.plantsProp.map( (eachPlant, index) => {
                             return (
-                                <div key={index} className="plantContainer">
+                                <div key={index} className="plantContainer" onClick={ () => this.props.showThisPlantProp(eachPlant.scientificName, eachPlant.commonName, eachPlant.image, eachPlant.family, eachPlant.lowLight, eachPlant.mediumLight, eachPlant.highLight, eachPlant.wateringNeeds, eachPlant.humidity, eachPlant.maxGrowthInMetres, eachPlant.propagateByCutting, eachPlant.toxic)}>
                                     <div className="plantImageContainer">
                                         <img src={eachPlant.image} alt="" />
                                     </div>
@@ -27,9 +24,6 @@ class DisplayAllPlants extends Component {
                             )
                         })
                     } 
-
-                </div>
-
 
             </React.Fragment>
         )
