@@ -1,3 +1,5 @@
+@import "mediaQueries.scss";
+
 footer {
     width: 100%;
     background-color: rgba(216, 226, 220, 0.3);
@@ -11,10 +13,16 @@ footer {
         align-items: flex-start;
         font-size: 2rem;
         .footerTextContainer {
-            width: 50%;
+            width: 60%;
             background-color: transparent;
+            @include tablet {
+                width: 100%;
+            }
             img {
                 max-width: 400px;
+                @include mobile {
+                    max-width: 200px;
+                }
             }
         }
     }

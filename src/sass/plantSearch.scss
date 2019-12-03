@@ -1,3 +1,5 @@
+@import "mediaQueries.scss";
+
 .plantSearchHeader {
     width: 100%;
     text-align: center;
@@ -6,11 +8,17 @@
         font-size: 4rem;
         color: $accent3;
         padding-bottom: 50px;
+        @include mobile {
+            font-size: 2rem;
+        }
     }
     p {
         @include lightSans;
         font-size: 2rem;
         color: $black;
+        @include mobile {
+            font-size: 1.7rem;
+        }
     }
 }
 .searchBar {
@@ -20,6 +28,9 @@
     justify-content: center;
     align-items: center;
     padding: 50px 0;
+    @include mobile {
+        font-size: 2rem;
+    }
     .plantSearchInput {
         @include lightSans;
         background-color: rgba(161, 186, 137, 0.5);

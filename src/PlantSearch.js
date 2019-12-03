@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './sass/app.scss';
-import DisplayAllPlants from './DisplayAllPlants';
+import DisplayAllPlants from './DisplayAllPlants.js';
 import dbRef from "./firebase.js";
 import SearchForSpecificPlant from "./SearchForSpecificPlant.js";
 import InfoForSpecificPlant from "./InfoForSpecificPlant.js";
@@ -25,7 +25,39 @@ class PlantSearch extends Component {
             specificPlantMaxGrowthInMetres: null,
             canPropagateByCutting: null,
             isToxic: null,
+            currentPage: 1,
+            previousPage: 0,
+            plantsPerPage: 9,
         };
+    }
+
+    nextPage = () => {
+        let totalNumberOfPlants = this.props.plantsProp.length;
+        let plantsPerPage = this.state.plantsPerPage;
+        if (this.state.currentPage < Math.ceil(totalNumberOfPlants / plantsPerPage)) {
+            this.setState({
+                currentPage: this.state.currentPage + 1,
+                previousPage: this.state.previousPage + 1,
+            })
+            let elmnt = document.querySelector(".searchBar");
+            this.scrollTo(document.documentElement, elmnt.offsetTop, 600);
+        };
+    }
+
+    previousPage = () => {
+        if (this.state.currentPage !== 1) {
+            this.setState({
+                currentPage: this.state.currentPage - 1,
+                previousPage: this.state.previousPage -1,
+            })
+            let elmnt = document.querySelector(".searchBar");
+            this.scrollTo(document.documentElement, elmnt.offsetTop, 600);
+        } else {
+            this.setState({
+                currentPage: 1,
+                previousPage: 0,
+            })
+        }
     }
 
     getUserInput = (event) => {
@@ -114,7 +146,7 @@ class PlantSearch extends Component {
 
                     <div className="searchResults">
 
-                        {this.state.showAllPlants ? <div className="displayAllPlantsContainer"><div className="searchResultsHeader"><h2>Displaying All Plants</h2></div><DisplayAllPlants plantsProp={this.props.plantsProp} showThisPlantProp={this.showThisPlant} /></div> : null}
+                        {this.state.showAllPlants ? <div className="displayAllPlantsContainer"><div className="searchResultsHeader"><h2>Displaying All Plants</h2></div><DisplayAllPlants plantsProp={this.props.plantsProp} showThisPlantProp={this.showThisPlant} plantsPerPageProp={this.state.plantsPerPage} currentPageProp={this.state.currentPage} previousPageProp={this.state.previousPage} totalNumberOfPagesProp={this.state.totalPages} nextPageFunction={this.nextPage} previousPageFunction={this.previousPage} greyOutArrowsFunction={this.greyOutArrows} /></div> : null}
 
                         {this.state.showSearchForASpecificPlant ? <div className="displayAllPlantsContainer"><div className="searchResultsHeader"><h2>Displaying search results for {this.state.userInput}</h2></div><SearchForSpecificPlant searchQueryProp={this.state.userInput} plantsProp={this.props.plantsProp} showThisPlantProp={this.showThisPlant} goBackToAllPlantsProp={this.goBackToAllPlants} /></div> : null}
 

@@ -1,3 +1,5 @@
+@import "mediaQueries.scss";
+
 .homepageContainer {
     width: 100%;
     height: calc(100vh - 150px);
@@ -10,19 +12,38 @@
     justify-content: center;
     align-items: center;
     margin-top: -50px;
+    @include mobile {
+        background-size: 100%;
+        height: calc(100vh - 75px);
+    }
     h1 {
         @include boldSans;
         font-size: 6rem;
         color: $accent2;
         margin-bottom: 50px;
+        text-align: center;
+        @include smallLaptop {
+            font-size: 5.5rem;
+        }
+        @include tablet {
+            font-size: 4rem;
+            margin-bottom: 10px;
+        }
     }
     .homepageCopyText{
         width: 50%;
+        @include mobile {
+            width: 100%;
+        }
         p {
             @include lightSans;
             font-size: 2.5rem;
             text-align: center;
             margin-bottom: 50px;
+            @include mobile {
+                font-size: 2rem;
+                margin-bottom: 10px;
+            }
         }
         .searchForAPlant {
             @include sans;
@@ -38,6 +59,10 @@
                 background-color: $accent3;
                 cursor: pointer;
             }
+            @include tablet {
+                font-size: 2rem;
+                padding: 5px;
+            }
         }
     }
 }
@@ -50,6 +75,9 @@ h2 {
     display: inline-block;
     z-index: 10;
     margin: 20px;
+    @include mobile {
+        font-size: 2.5rem;
+    }
     &::after {
         content: "";
         display: block;
@@ -71,6 +99,9 @@ h2 {
     align-items: flex-start;
     width: 100%;
     flex-wrap: wrap;
+    @include smallMobile {
+        justify-content: center;
+    }
 }
 
 .searchResultsHeader {
@@ -81,6 +112,9 @@ h2 {
     width: calc(100%);
     height: 350px;
     background-color: #e6e6e6;
+    @include mobile {
+        height: 300px;
+    }
     img {
         height: 100%;
         width: 100%;
@@ -95,16 +129,24 @@ h2 {
     border: 1px solid $accent5;
     border-radius: 5px;
     transition: all 0.2s ease;
+    text-align: center;
+    @include tablet {
+        width: calc((100% / 2) - 20px);
+    }
+    @include smallMobile {
+        width: 100%;
+        min-width: 250px;
+    }
     &:hover {
         border: 1px solid $accent1;
-        background-color: rgba(146, 189, 163, 0.3);
+        background-color: rgba(146, 189, 163, 0.1);
         cursor: pointer;
     }
     &:hover h3 {
-        color: $accent1;
-    }
-    &:hover h4 {
-        color: $accent1;
+        position: relative;
+        display: inline-block;
+        text-align: center;
+        z-index: 10;
     }
 }
 h3 {
@@ -114,6 +156,12 @@ h3 {
     font-size: 2rem;
     padding: 10px 0;
     transition: all 0.2s ease;
+    @include tablet {
+        font-size: 1.7rem;
+    }
+    @include mobile {
+        font-size: 1.5rem;
+    }
 }
 h4 {
     @include lightItalicSans;
@@ -121,6 +169,9 @@ h4 {
     color: $black;
     text-align: center;
     transition: all 0.2s ease;
+    @include mobile {
+        font-size: 1.3rem;
+    }
 }
 
 .plantInfoContainer {
@@ -130,10 +181,24 @@ h4 {
     border-radius: 5px;
     display: flex;
     flex-direction: row;
+    @include smallLaptop {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
     .plantInfoImageContainer {
         width: 400px;
         height: 500px;
         margin-right: 20px;
+        @include smallLaptop {
+            margin-right: 0;
+            width: 100%;
+            height: 400px;
+            margin-bottom: 20px;
+        }
+        @include mobile {
+            height: 250px;
+        }
         img {
             object-fit: cover;
             object-position: center;
@@ -151,6 +216,9 @@ h4 {
         position: relative;
         z-index: 10;
         display: inline-block;
+        @include mobile {
+            font-size: 2.4rem;
+        }
         &::after {
             content: "";
             position: absolute;
@@ -160,11 +228,17 @@ h4 {
             bottom: 5px;
             background-color: rgba(146, 189, 163, 0.5);
             z-index: -1;
+            @include smallMobile {
+                display: none;
+            }
         }
     }
     h4 {
         font-size: 2.5rem;
         padding-bottom: 10px;
+        @include mobile {
+            font-size: 2rem;
+        }
     }
     p {
         @include lightSans;
@@ -175,6 +249,12 @@ h4 {
 
 .plantInfoText {
     width: calc(100% - 300px);
+    @include smallLaptop {
+        width: calc(100% - 50px);
+    }
+    @include tablet {
+        width: 100%;
+    }
 }
 
 .goBackToAllPlants {
@@ -200,8 +280,6 @@ h4 {
     padding: 20px 0;
     .plantInfo {
         padding: 10px;
-        // border: 1px solid $accent5;
-        // border-radius: 5px;
         margin: 10px;
         width: 200px;
         display: flex;
@@ -209,7 +287,12 @@ h4 {
         justify-content: center;
         align-items: flex-start;
         flex-wrap: wrap;
-        // height: 200px;
+        @include mobile {
+            width: 150px;
+        }
+        @include smallMobile {
+            width: 100px;
+        }
     }
     .infoImage {
         width: 100px;
@@ -233,8 +316,43 @@ h4 {
     display: block;
     text-align: center;
     width: 100%;
+    @include smallMobile {
+        font-size: 1.4rem;
+    }
 }
 
 .dataTitle {
     @include boldSans;
+}
+
+.pageNavigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    .backArrow, .forwardArrow {
+        width: 50%;
+        .backArrowSpan, .forwardArrowSpan {
+            font-size: 5rem;
+            color: $black;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            &:hover {
+                color: $accent3;
+            }
+        }
+        .greyedOutArrow {
+            font-size: 5rem;
+            color: $accent5;
+            transition: all 0.3s ease;
+            cursor: auto;
+            &:hover {
+                color: $accent5;
+            }
+        }    
+    }
+    .forwardArrow {
+        text-align: right;
+    }
 }

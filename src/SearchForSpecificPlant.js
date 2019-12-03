@@ -44,6 +44,7 @@ class SearchForSpecificPlant extends Component {
                             }
                         })
                     }
+
                 </React.Fragment>
             )
         }
