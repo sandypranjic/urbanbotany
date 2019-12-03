@@ -8,7 +8,6 @@ class Homepage extends Component {
     }
 
     render() {
-        // console.log(this.props);
         return(
             <section className="homepageContainer">
                 <div className="headerContainer">

@@ -80,6 +80,8 @@ class PlantSearch extends Component {
     }
 
     showThisPlant = (scientificName, commonName, image, family, lowLight, mediumLight, highLight, wateringNeeds, humidity, maxGrowthInMetres, propagateByCutting, toxic) => {
+        let elmnt = document.querySelector(".searchBar");
+        this.scrollTo(document.documentElement, elmnt.offsetTop, 600);
         this.setState({
             showInfoForSpecificPlant: true,
             showAllPlants: false,
@@ -99,8 +101,6 @@ class PlantSearch extends Component {
             isToxic: toxic,
         })
         console.log(scientificName, commonName, image, family);
-        let elmnt = document.querySelector(".searchBar");
-        this.scrollTo(document.documentElement, elmnt.offsetTop, 600);
     }
 
     goBackToAllPlants = () => {
@@ -135,7 +135,7 @@ class PlantSearch extends Component {
                 <div className="plantSearchContainer">
                     <div className="plantSearchHeader">
                         <h1>Search for a Plant</h1>
-                        <p>The Urban Botany database contains care instructions for over 100 of the most common houseplants, so you know how to give your plant the optimal care it deserves. Simply search either by scientific name or by common name, and if we have care info for that plant we’ll share all of our knowledge with you. We also connect you to the Trefle database, which collects data from a variety of institutions like the USDA and the Kew Botanical Gardens. Even if we don’t have specific care instructions on the super cool rare plant you search, we’ll still be able to show you what data the scientific community has.</p>
+                        <p>The Urban Botany database contains care instructions for over 100 of the most common houseplants, so you know how to give your plant the optimal care it deserves. Simply search either by scientific name or by common name, and if we have care info for that plant we’ll share all of our knowledge with you.</p>
                     </div>
                     <div className="searchBar">
                         <form onSubmit={this.saveUserInput}>

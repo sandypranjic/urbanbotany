@@ -15,7 +15,7 @@ class Footer extends Component{
                                 <img src={logo} alt=""></img>
                             </div>
                             <div className="footerText">
-                                <p>Urban Botany is a small web-based app built and designed by Sandy Pranjic using React, Firebase, and the Trefle.io API. It was built with the intention of encouraging others to take up caring for houseplants as a hobby in hopes of reigniting people’s connection to Mother Nature.</p>
+                                <p>Urban Botany is a small web-based app built and designed by Sandy Pranjic using React and Firebase. It was built with the intention of encouraging others to take up caring for houseplants as a hobby in hopes of reigniting people’s connection to Mother Nature.</p>
                             </div>
                         </div>
 
