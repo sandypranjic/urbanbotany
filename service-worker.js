@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/urbanbotany/precache-manifest.449a234b4f2345bd76444bba8e071bf1.js"
+  "/urbanbotany/precache-manifest.52e1fc922b09f578a6d3bf39b14e7c03.js"
 );
 
 self.addEventListener('message', (event) => {
