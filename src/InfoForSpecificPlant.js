@@ -7,6 +7,8 @@ import repottingIcon from "./assets/repottingIcon.svg";
 import propagateByCuttingIcon from "./assets/propagateByCuttingIcon.svg";
 import toxicIcon from "./assets/toxicIcon.svg";
 
+// This component loads info from DisplayAllPlants() that's passed down as props. It plugs those props into different divs and spans to show care instructions about the plant to the user.
+
 class InfoForSpecificPlant extends Component {
     render() {
         return(
@@ -14,7 +16,7 @@ class InfoForSpecificPlant extends Component {
                 <h2 className="goBackToAllPlants" onClick={this.props.goBackToAllPlantsProp}>Go Back To All Plants</h2>
                     <div className="plantInfoContainer">
                         <div className="plantInfoImageContainer">
-                            <img src={this.props.specificPlantImageProp} alt="" />
+                            <img src={this.props.specificPlantImageProp} alt={this.props.altProp} />
                         </div>
                         <div className="plantInfoText">
                             <h3>{this.props.specificPlantScientificNameProp}</h3>
@@ -38,22 +40,22 @@ class InfoForSpecificPlant extends Component {
                                 <div className="plantInfo">
                                     <div className="infoImage"><img src={growthIcon} alt="" /></div>
                                     <span className="dataTitle">Max Growth</span>
-                                    {this.props.maxGrowthProp === 1 ? <span class="dataText">{this.props.maxGrowthProp} metre</span> : <span class="dataText">{this.props.maxGrowthProp} metres</span>}
+                                    {this.props.maxGrowthProp === 1 ? <span className="dataText">{this.props.maxGrowthProp} metre</span> : <span className="dataText">{this.props.maxGrowthProp} metres</span>}
                                 </div>
                                 <div className="plantInfo">
                                     <div className="infoImage"><img src={repottingIcon} alt="" /></div>
                                     <span className="dataTitle">Repotting</span>
-                                    {/* {this.props.maxGrowthProp === 1 ? <span class="dataText">{this.props.maxGrowthProp} metre</span> : <span class="dataText">{this.props.maxGrowthProp} metres</span>} */}
+                                    {this.props.repottingProp ? <span className="dataText">{this.props.repottingProp}</span> : <span className="dataText">We don't have this info yet.</span>}
                                 </div>
                                 <div className="plantInfo">
                                     <div className="infoImage"><img src={propagateByCuttingIcon} alt="" /></div>
                                     <span className="dataTitle">Propagation</span>
-                                    {this.props.propagationProp ? <span class="dataText">Propagate by cutting</span> : <span class="dataText">Cannot be propagated by cutting</span>}
+                                    {this.props.propagationProp ? <span className="dataText">Propagate by cutting</span> : <span className="dataText">Cannot be propagated by cutting</span>}
                                 </div>
                                 <div className="plantInfo">
                                     <div className="infoImage"><img src={toxicIcon} alt="" /></div>
                                     <span className="dataTitle">Toxicity</span>
-                                    {this.props.toxicProp ? <span class="dataText">Toxic for pets</span> : <span class="dataText">Safe for pets</span>}
+                                    {this.props.toxicProp ? <span className="dataText">Toxic for pets</span> : <span className="dataText">Safe for pets</span>}
                                 </div>
                             </div>
                         </div>

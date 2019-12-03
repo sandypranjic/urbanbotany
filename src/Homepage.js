@@ -8,6 +8,7 @@ class Homepage extends Component {
     }
 
     render() {
+        // This is the default component that loads first and acts as the "homepage".
         return(
             <section className="homepageContainer">
                 <div className="headerContainer">

@@ -6,6 +6,10 @@ import PlantSearch from "./PlantSearch.js";
 import listOfPlants from "./firebase.js";
 import Footer from "./Footer";
 
+
+// Which components show depend on how different states are set
+// The plants array in my constructor holds all the plant data that I load from Firebase
+
 class App extends Component {
   constructor() {
     super();
@@ -32,6 +36,8 @@ class App extends Component {
 
   componentDidMount() {
 
+    // The following event listener listens to my database for any change and pushes each object from my database into my plants array in the state, which allows me to utilize said data and loop through it.
+
     const listOfPlantsArray = [];
     const plantData = [];
     listOfPlants.on("value", (response) => {
@@ -44,7 +50,7 @@ class App extends Component {
           const innerPlantObject = [key, value];
           const plant = innerPlantObject[1];
 
-          plantData.push({scientificName: plant.scientificName, commonName: plant.commonName, family: plant.family, toxic: plant.toxic, wateringNeeds: plant.wateringNeeds, humidity: plant.humidity, lowLight: plant.lowLight, mediumLight: plant.mediumLight, highLight: plant.highLight, propagateByCutting: plant.propagateByCutting, maxGrowthInMetres: plant.maxGrowthInMetres, image: plant.image});
+          plantData.push({scientificName: plant.scientificName, commonName: plant.commonName, family: plant.family, toxic: plant.toxic, wateringNeeds: plant.wateringNeeds, humidity: plant.humidity, lowLight: plant.lowLight, mediumLight: plant.mediumLight, highLight: plant.highLight, propagateByCutting: plant.propagateByCutting, maxGrowthInMetres: plant.maxGrowthInMetres, image: plant.image, alt: plant.alt, repotting: plant.repotting});
 
           this.setState({
             plants: plantData

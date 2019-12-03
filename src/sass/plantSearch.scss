@@ -49,7 +49,7 @@
         padding: 10px;
         border: 0;
         cursor: pointer;
-        &:hover {
+        &:hover, &:focus {
             color: $accent2;
         }
     }
