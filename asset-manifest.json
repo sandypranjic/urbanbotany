@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/urbanbotany/static/css/main.a70b256f.chunk.css",
-    "main.js": "/urbanbotany/static/js/main.cdd9f75b.chunk.js",
-    "main.js.map": "/urbanbotany/static/js/main.cdd9f75b.chunk.js.map",
+    "main.js": "/urbanbotany/static/js/main.b41c7e03.chunk.js",
+    "main.js.map": "/urbanbotany/static/js/main.b41c7e03.chunk.js.map",
     "runtime-main.js": "/urbanbotany/static/js/runtime-main.407065a9.js",
     "runtime-main.js.map": "/urbanbotany/static/js/runtime-main.407065a9.js.map",
-    "static/js/2.b6c4b499.chunk.js": "/urbanbotany/static/js/2.b6c4b499.chunk.js",
-    "static/js/2.b6c4b499.chunk.js.map": "/urbanbotany/static/js/2.b6c4b499.chunk.js.map",
+    "static/js/2.ec5cba3a.chunk.js": "/urbanbotany/static/js/2.ec5cba3a.chunk.js",
+    "static/js/2.ec5cba3a.chunk.js.map": "/urbanbotany/static/js/2.ec5cba3a.chunk.js.map",
     "index.html": "/urbanbotany/index.html",
-    "precache-manifest.52e1fc922b09f578a6d3bf39b14e7c03.js": "/urbanbotany/precache-manifest.52e1fc922b09f578a6d3bf39b14e7c03.js",
+    "precache-manifest.a7ba8636eef74759d2ad62e4405a6f94.js": "/urbanbotany/precache-manifest.a7ba8636eef74759d2ad62e4405a6f94.js",
     "service-worker.js": "/urbanbotany/service-worker.js",
     "static/css/main.a70b256f.chunk.css.map": "/urbanbotany/static/css/main.a70b256f.chunk.css.map",
     "static/media/growthIcon.svg": "/urbanbotany/static/media/growthIcon.804353f9.svg",
@@ -22,8 +22,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.407065a9.js",
-    "static/js/2.b6c4b499.chunk.js",
+    "static/js/2.ec5cba3a.chunk.js",
     "static/css/main.a70b256f.chunk.css",
-    "static/js/main.cdd9f75b.chunk.js"
+    "static/js/main.b41c7e03.chunk.js"
   ]
 }

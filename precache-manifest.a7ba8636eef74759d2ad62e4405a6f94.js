@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b3da8784ec3f21537b64213dcbb84aac",
+    "revision": "1fd69e81c3677fc3404fadf4b887df2b",
     "url": "/urbanbotany/index.html"
   },
   {
-    "revision": "1732f487be9f8876fff3",
+    "revision": "fba4a28b847adcc44797",
     "url": "/urbanbotany/static/css/main.a70b256f.chunk.css"
   },
   {
-    "revision": "9d88b924be3ddf93cf1a",
-    "url": "/urbanbotany/static/js/2.b6c4b499.chunk.js"
+    "revision": "a7369654a11564cd56ff",
+    "url": "/urbanbotany/static/js/2.ec5cba3a.chunk.js"
   },
   {
-    "revision": "1732f487be9f8876fff3",
-    "url": "/urbanbotany/static/js/main.cdd9f75b.chunk.js"
+    "revision": "fba4a28b847adcc44797",
+    "url": "/urbanbotany/static/js/main.b41c7e03.chunk.js"
   },
   {
     "revision": "8706aa0bf4a750433957",
